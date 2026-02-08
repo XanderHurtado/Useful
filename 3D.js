@@ -148,6 +148,7 @@ class OBJ {
 		this.maps = [];
 		this.mapNames = [];
 		this.translate = new Point(0,0,0);
+		this.scale = new Point(1,1,1);
 		this.rotate = new Point(0,0,0);
 		this.rotateOrder = "xzy";
 		this.dummyCanvas = new OffscreenCanvas(1,1);
@@ -358,6 +359,7 @@ class Engine {
 			obj=this.objects[obj];
 		}
 		var p = point.copy();
+		p.mult(obj.scale);
 		p.rotate(obj.rotate,obj.rotateOrder);
 		p.add(obj.translate);
 		return p.project(this.camera);
