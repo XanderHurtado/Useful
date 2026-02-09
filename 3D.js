@@ -359,9 +359,9 @@ class Engine {
 			obj=this.objects[obj];
 		}
 		var p = point.copy();
+		p.add(obj.translate);
 		p.mult(obj.scale);
 		p.rotate(obj.rotate,obj.rotateOrder);
-		p.add(obj.translate);
 		return p.project(this.camera);
 	}
 	draw(ctx) {
