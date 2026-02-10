@@ -119,7 +119,7 @@ class Point {
 		if (order[step]==="z") {
 			this.rotateZ(theta.z);
 		}else if (order[step]==="x") {
-			this.rotateZ(theta.x);
+			this.rotateX(theta.x);
 		}
 		
 	}
